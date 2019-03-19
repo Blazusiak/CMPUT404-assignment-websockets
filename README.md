@@ -22,6 +22,7 @@ Resources Used
 
 * [Redirect in Flask](https://stackoverflow.com/questions/14343812/redirecting-to-url-in-flask)
 * [Routing in Flask](http://flask.pocoo.org/docs/1.0/api/#flask.Flask.route)
+* [Colors used](https://saruwakakun.com/en/material-color)
 
 Contributors / Licensing
 ========================
