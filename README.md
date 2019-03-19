@@ -17,6 +17,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Resources Used
+===============
+
+* [Redirect in Flask](https://stackoverflow.com/questions/14343812/redirecting-to-url-in-flask)
+* [Routing in Flask](http://flask.pocoo.org/docs/1.0/api/#flask.Flask.route)
+
 Contributors / Licensing
 ========================
 
