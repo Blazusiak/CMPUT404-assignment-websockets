@@ -27,7 +27,7 @@
     <canvas id="c" width="100%" height="100%" style="-webkit-tap-highlight-color: transparent;"></canvas> 
 
     <script>
-      // Fix me
+      // Fixed
 var canvas = document.getElementById('c');
 var host = window.location.host;
 var context = canvas.getContext("2d");
@@ -126,7 +126,11 @@ function getPosition(e) {
 function addEntity(entity, data) {
     world[entity] = data;
     drawNextFrame(); // (but should we?)
-    //XXX: Send a XHTML Request that updates the entity you just modified!
+    // Create a packet and insert the Entity data
+    packet = {};
+    packet[entity] = data;
+    // Convert it into JSON format and send it through the socket.
+    socket.send(JSON.stringify(packet));
 }
 var counter = 0;
 function addEntityWithoutName(data) {
@@ -255,7 +259,7 @@ function wsSetup() {
     var url = "ws://"+host+"/subscribe";   
     socket = new WebSocket(url);
     socket.onopen = function() {
-        //XXX: TODO What are you going to do here?
+        // Nothing we just opened a socket
     };
     socket.onerror = function(msg) {
         debug("WebSocket Error:" + msg.data);
@@ -263,7 +267,12 @@ function wsSetup() {
     socket.onmessage = function(msg) {  
         try {
             debug("WebSocket Recv:" + msg.data);
-            //XXX: TODO What are you going to do here?            
+            // Receive the message and update the world
+            let message = JSON.parse(msg.data);
+            for (let entity in message) {
+                world[entity] = message[entity]
+                drawNextFrame()
+            }
         } catch (e) {
             alert("socket on message: " + e);
         }

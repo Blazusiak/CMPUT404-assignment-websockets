@@ -23,6 +23,8 @@ Resources Used
 * [Redirect in Flask](https://stackoverflow.com/questions/14343812/redirecting-to-url-in-flask)
 * [Routing in Flask](http://flask.pocoo.org/docs/1.0/api/#flask.Flask.route)
 * [Colors used](https://saruwakakun.com/en/material-color)
+* [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications)
+* [WebSocket Server Side](https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/WebSocketsExamples/chat.py)
 
 Contributors / Licensing
 ========================
